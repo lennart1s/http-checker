@@ -1,7 +1,6 @@
 name: Tester
 
 on:
-  [push]
   workflow_dispatch:
 
 jobs:
