@@ -11,8 +11,8 @@ jobs:
         uses: ./
         id: action
         with:
-          urls: ["test1", "test2"]
-          coses: [100, 200]
+          urls: '["test1", "test2"]'
+          coses: '[100, 200]'
 
       - name: Print outpuot
         run: echo "${{ steps.action.outputs.status }}"
