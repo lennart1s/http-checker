@@ -6,9 +6,10 @@ jobs:
     name: We test it locally with act
     steps:
       - name: Test my sanity
-        uses: ./ # Uses an action in the root directory
+        uses: actions/checkout@v2
         id: xyfunction
         with:
-          x: 150
+          path: "http-checker"
+          x: "150"
       - name: Print y
         run: echo "y eq ${{ steps.xyfunction.outputs.y }} bitch!"
