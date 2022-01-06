@@ -1,15 +1,16 @@
+# action.yaml
 name: "Blog Custom Github Action"
 description: "Call an API and get the result"
 inputs:
-  urls:
-    description: "urls to test"
+  pokemon_id:
+    description: "number of the pokemon in the pokedex"
     required: true
-    default: '[]'
+    default: 1
 outputs:
-  status_codes:
-    description: "returned codes"
+  pokemon_name:
+    description: "Name des Pokemons"
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.urls }}
+    - ${{ inputs.pokemon_id}}

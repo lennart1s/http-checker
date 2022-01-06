@@ -3,7 +3,10 @@ FROM alpine:latest
 
 # installes required packages for our script
 RUN	apk add --no-cache \
-  bash
+  bash \
+  ca-certificates \
+  curl \
+  jq
 
 # Copies your code file  repository to the filesystem 
 COPY entrypoint.sh /entrypoint.sh
