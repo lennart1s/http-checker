@@ -1,4 +1,3 @@
-# action.yaml
 name: "Blog Custom Github Action"
 description: "Call an API and get the result"
 inputs:
