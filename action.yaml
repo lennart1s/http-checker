@@ -1,0 +1,18 @@
+name: 'HTTP-Checker'
+description: 'Check the HTTP status of websites'
+inputs:
+  urls:
+    description: 'the urls to check'
+    required: true
+  codes:
+    description: 'valid codes, will fail if different is returned'
+    default: [200]
+outputs:
+  status:
+    description: 'status codes returned by the sites'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.urls }}
+    - ${{ inputs.codes }}

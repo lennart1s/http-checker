@@ -1,0 +1,19 @@
+name: Tester
+
+on:
+  [push]
+  workflow_dispatch:
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test this action
+        uses: ./
+        id: action
+        with:
+          urls: ["test1", "test2"]
+          coses: [100, 200]
+
+      - name: Print outpuot
+        run: echo "${{ steps.action.outputs.status }}"
