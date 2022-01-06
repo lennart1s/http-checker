@@ -6,7 +6,7 @@ jobs:
     name: We test it locally with act
     steps:
       - name: Get Pokemon name
-        uses: lennart1s/http-checker
+        uses: ./
         id: test
         with:
           urls: '["test1", "test2"]'
