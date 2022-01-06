@@ -6,9 +6,9 @@ jobs:
     name: We test it locally with act
     steps:
       - name: Get Pokemon name
-        uses: philschmid/blog-custom-github-action@master
-        id: pokemon
+        uses: lennart1s/http-checker@master
+        id: test
         with:
-          pokemon_id: 150
-      - name: Get the pokemon
-        run: echo "${{ steps.pokemon.outputs.pokemon_name }} attack"
+          urls: '["test1", "test2"]'
+      - name: print out
+        run: echo "${{ steps.test.outputs.status_codes }} BITCH!"
