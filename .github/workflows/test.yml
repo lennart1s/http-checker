@@ -9,7 +9,7 @@ jobs:
     name: Test
     steps:
       - name: Test this action
-        uses: ./
+        uses: ./@master
         id: action
         with:
           urls: '["test1", "test2"]'
