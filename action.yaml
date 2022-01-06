@@ -1,18 +1,16 @@
-name: 'HTTP-Checker'
-description: 'Check the HTTP status of websites'
+# action.yaml
+name: "Blog Custom Github Action"
+description: "Call an API and get the result"
 inputs:
-  urls:
-    description: 'the urls to check'
+  pokemon_id:
+    description: "number of the pokemon in the pokedex"
     required: true
-  codes:
-    description: 'valid codes, will fail if different is returned'
-    default: [200]
+    default: 1
 outputs:
-  status:
-    description: 'status codes returned by the sites'
+  pokemon_name:
+    description: "Name des Pokemons"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
-    - ${{ inputs.urls }}
-    - ${{ inputs.codes }}
+    - ${{ inputs.pokemon_id}}
