@@ -6,6 +6,7 @@ on:
 jobs:
   Test:
     runs-on: ubuntu-latest
+    name: Test
     steps:
       - name: Test this action
         uses: ./
