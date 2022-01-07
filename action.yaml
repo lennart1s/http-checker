@@ -1,16 +1,15 @@
-# action.yaml
-name: "Blog Custom Github Action"
-description: "Call an API and get the result"
+name: "HTTP Checker"
+description: "Checks the http status of websites"
 inputs:
-  pokemon_id:
-    description: "number of the pokemon in the pokedex"
+  urls:
+    description: "urls to test"
     required: true
-    default: 1
+    default: "[]"
 outputs:
-  pokemon_name:
-    description: "Name des Pokemons"
+  responses:
+    description: "responses to get requests"
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.pokemon_id}}
+    - ${{ inputs.urls}}
