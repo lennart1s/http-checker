@@ -3,6 +3,6 @@ set -e
 
 echo "HTTP-checker starting..."
 
-RES=$(go run httpChecker.go)
+RES=$(./checker)
 
 echo "::set-output name=responses::$RES"
