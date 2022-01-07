@@ -31,7 +31,7 @@ func main() {
 	responses := make(map[string]int)
 	text := ""
 
-	// exitWithOne := false
+	exitWithOne := false
 
 	tr := &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}}
 	client := &http.Client{Transport: tr}
@@ -49,21 +49,19 @@ func main() {
 				break
 			}
 		}
-		/* if !ok {
+		if !ok {
 			exitWithOne = true
-		} */
+		}
 
 		text += "'" + url + "': " + strconv.Itoa(responses[url])
-		if !ok {
-			text += "<-fail"
-		} else if i < len(urls)-1 {
+		if i < len(urls)-1 {
 			text += ", "
 		}
 	}
 
 	fmt.Println(text)
 
-	/* if exitWithOne {
+	if exitWithOne {
 		os.Exit(1)
-	} */
+	}
 }
