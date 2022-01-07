@@ -10,6 +10,6 @@ jobs:
         id: tester
         with:
           urls: "[\"https://google.com\", \"https://sandbothe.dev\"]"
-          codes: "[200, 301]"
+          codes: "[200, 301, 503]"
       - name: Print results
         run: echo "${{ steps.tester.outputs.responses }}"
