@@ -14,4 +14,4 @@ RUN go build
 RUN chmod +x ./http-checker
 RUN chmod +x ./entrypoint.sh
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
