@@ -10,17 +10,17 @@ import (
 )
 
 func main() {
-	args := os.Args[1:]
+	// args := os.Args[1:]
 
 	var urls []string
-	err := json.Unmarshal([]byte(args[0]), &urls)
+	err := json.Unmarshal([]byte(os.Getenv("INPUT_URLS")), &urls)
 	if err != nil {
 		panic(err)
 	}
 
 	var accepted_codes []int
-	if len(args) >= 2 {
-		err := json.Unmarshal([]byte(args[1]), &accepted_codes)
+	if os.Getenv("INPUT_CODES") == "" {
+		err := json.Unmarshal([]byte(os.Getenv("INPUT_CODES")), &accepted_codes)
 		if err != nil {
 			panic(err)
 		}
@@ -59,7 +59,8 @@ func main() {
 		}
 	}
 
-	fmt.Println(text + os.Getenv("INPUT_URLS"))
+	fmt.Println("::set-output name=responses::" + text)
+	// os.Getenv("INPUT_URLS")
 
 	if exitWithOne {
 		os.Exit(1)
