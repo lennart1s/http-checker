@@ -5,10 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: We test it locally with act
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: Get Pokemon name
-        uses: lennart1s/http-checker@master
+        uses: lennart1s/http-checker@v2
         id: pokemon
         with:
           pokemon_id: 150
