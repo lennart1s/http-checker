@@ -9,6 +9,6 @@ echo "${RESP}"
 
 echo "::set-output name=responses::${RESP}"
 
-if [[ $RESP == *"<-error"* ]]; then
+if [[ $RESP == *"<-fail"* ]]; then
   exit 1
 fi
