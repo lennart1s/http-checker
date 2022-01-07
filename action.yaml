@@ -5,6 +5,10 @@ inputs:
     description: "urls to test"
     required: true
     default: "[]"
+  codes:
+    description: "accepted response codes"
+    required: false
+    default: "[]"
 outputs:
   responses:
     description: "responses to get requests"
@@ -12,4 +16,5 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.urls}}
+    - ${{ inputs.urls }}
+    - ${{ inputs.codes }}

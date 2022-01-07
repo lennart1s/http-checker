@@ -9,6 +9,7 @@ jobs:
         uses: lennart1s/http-checker@v2
         id: tester
         with:
-          urls: "[5, 6, 10]"
+          urls: "[\"https://google.com\", \"https://facebook.com\"]"
+          codes: "[200, 301]"
       - name: Print results
-        run: echo "Results ${{ steps.tester.outputs.responses }}"
+        run: echo "Results:\n${{ steps.tester.outputs.responses }}"

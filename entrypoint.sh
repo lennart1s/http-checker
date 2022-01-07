@@ -5,6 +5,6 @@ echo "HTTP-checker starting..."
 
 #INPUT_URLS="[5, 6, 10]"
 
-RESP=$(/app/http-checker "$INPUT_URLS")
+RESP=$(/app/http-checker "$INPUT_URLS" "$INPUT_CODES")
 
 echo "::set-output name=responses::${RESP}"
