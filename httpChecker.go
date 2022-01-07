@@ -59,7 +59,7 @@ func main() {
 		}
 	}
 
-	fmt.Println(text)
+	fmt.Println(text + os.Getenv("INPUT_URLS"))
 
 	if exitWithOne {
 		os.Exit(1)
