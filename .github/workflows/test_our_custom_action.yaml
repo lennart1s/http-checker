@@ -6,7 +6,7 @@ jobs:
     name: Test the http-checker
     steps:
       - name: Get responses
-        uses: lennart1s/http-checker@v2
+        uses: lennart1s/http-checker@v1
         id: tester
         with:
           urls: "[\"https://google.com\"]"
