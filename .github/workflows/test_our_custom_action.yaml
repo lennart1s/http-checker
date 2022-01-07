@@ -1,0 +1,16 @@
+on: [push]
+
+jobs:
+  custom_test:
+    runs-on: ubuntu-latest
+    name: We test it locally with act
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get Pokemon name
+        uses: lennart1s/http-checker@master
+        id: pokemon
+        with:
+          pokemon_id: 150
+      - name: Get the pokemon
+        run: echo "${{ steps.pokemon.outputs.pokemon_name }} attack"

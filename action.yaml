@@ -1,15 +1,16 @@
-name: 'Test Action'
-description: 'Tests my capability to think'
+# action.yaml
+name: "Blog Custom Github Action"
+description: "Call an API and get the result"
 inputs:
-  x:
-    description: 'a number'
+  pokemon_id:
+    description: "number of the pokemon in the pokedex"
     required: true
     default: 1
 outputs:
-  y:
-    description: 'another number'
+  pokemon_name:
+    description: "Name des Pokemons"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
-    - ${{ inputs.x }}
+    - ${{ inputs.pokemon_id}}
