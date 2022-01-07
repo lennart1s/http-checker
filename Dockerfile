@@ -1,5 +1,5 @@
 # Base image 
-FROM alpine:latest
+FROM golang:1.16-alpine
 
 # installes required packages for our script
 RUN	apk add --no-cache \
@@ -10,6 +10,7 @@ RUN	apk add --no-cache \
 
 # Copies your code file  repository to the filesystem 
 COPY entrypoint.sh /entrypoint.sh
+COPY httpChecker.go /httpChecker.go
 
 # change permission to execute the script and
 RUN chmod +x /entrypoint.sh
