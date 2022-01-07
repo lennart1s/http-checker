@@ -41,6 +41,7 @@ func main() {
 			panic(err)
 		}
 		responses[url] = resp.StatusCode
+		fmt.Println("\t-'" + url + "': " + strconv.Itoa(responses[url]))
 		text += "'" + url + "': " + strconv.Itoa(responses[url]) + ", "
 
 		ok := false
