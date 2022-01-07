@@ -11,9 +11,6 @@ RUN	apk add --no-cache \
 # Copies your code file  repository to the filesystem 
 COPY ./ ./
 
-RUN go build -o checker
-
-COPY checker .
 
 # change permission to execute the script and
 RUN chmod +x /entrypoint.sh

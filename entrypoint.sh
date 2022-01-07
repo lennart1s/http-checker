@@ -3,6 +3,7 @@ set -e
 
 echo "HTTP-checker starting..."
 
-RES=$(./checker)
+RESP=$(ls -al)
+echo "ls: ${RESP}"
 
-echo "::set-output name=responses::$RES"
+echo "::set-output name=responses::$INPUT_URLS"
