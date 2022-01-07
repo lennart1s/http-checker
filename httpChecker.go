@@ -52,7 +52,7 @@ func main() {
 		if !ok {
 			exitWithOne = true
 		}
-
+		fmt.Println("\t-" + url + ": " + strconv.Itoa(responses[url]))
 		text += "'" + url + "': " + strconv.Itoa(responses[url])
 		if i < len(urls)-1 {
 			text += ", "
