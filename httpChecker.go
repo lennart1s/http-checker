@@ -35,13 +35,12 @@ func main() {
 
 	tr := &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}}
 	client := &http.Client{Transport: tr}
-	for _, url := range urls {
+	for i, url := range urls {
 		resp, err := client.Get(url)
 		if err != nil {
 			panic(err)
 		}
 		responses[url] = resp.StatusCode
-		text += "'" + url + "': " + strconv.Itoa(responses[url]) + ", "
 
 		ok := false
 		for _, code := range accepted_codes {
@@ -53,11 +52,18 @@ func main() {
 		if !ok {
 			exitWithOne = true
 		}
+
+		text += "'" + url + "': " + strconv.Itoa(responses[url])
+		if !ok {
+			text += "<-fail"
+		} else if i < len(urls)-1 {
+			text += ", "
+		}
 	}
 
 	fmt.Println(text)
 
-	if exitWithOne {
-		// os.Exit(1)
-	}
+	/* if exitWithOne {
+		os.Exit(1)
+	} */
 }
