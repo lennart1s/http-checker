@@ -10,6 +10,7 @@ RUN	apk add --no-cache \
 
 # Copies your code file  repository to the filesystem 
 COPY entrypoint.sh /entrypoint.sh
+COPY httpChecker.go /httpChecker.go
 
 # change permission to execute the script and
 RUN chmod +x /entrypoint.sh
