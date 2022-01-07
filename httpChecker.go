@@ -28,8 +28,10 @@ func main() {
 			panic(err)
 		}
 		responses[url] = resp.StatusCode
-		text += "\t- '"+url+"': "+strconv.Itoa(responses[url])+"\n"
+		text += "\t- '" + url + "': " + strconv.Itoa(responses[url]) + "\n"
 	}
+
+	// TODO: check for valid coded and do exit0 or exit1
 
 	fmt.Println(text)
 }
