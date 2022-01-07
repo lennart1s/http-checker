@@ -38,7 +38,7 @@ func main() {
 			panic(err)
 		}
 		responses[url] = resp.StatusCode
-		text += "\t- '" + url + "': " + strconv.Itoa(responses[url]) + "\n"
+		text += "'" + url + "': " + strconv.Itoa(responses[url]) + ", "
 
 		ok := false
 		for _, code := range accepted_codes {
