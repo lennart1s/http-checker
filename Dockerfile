@@ -5,13 +5,11 @@ RUN	apk add --no-cache \
 
 WORKDIR /app
 
-COPY entrypoint.sh ./entrypoint.sh
 COPY httpChecker.go ./httpChecker.go
 COPY go.mod ./go.mod
 
 RUN go build
 
 RUN chmod +x ./http-checker
-RUN chmod +x ./entrypoint.sh
 
 ENTRYPOINT ["/app/http-checker"]
