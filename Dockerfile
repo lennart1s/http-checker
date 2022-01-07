@@ -9,7 +9,7 @@ RUN	apk add --no-cache \
   jq
 
 # Copies your code file  repository to the filesystem 
-COPY ./ ./
+COPY entrypoint.sh ./entrypoint.sh
 
 
 # change permission to execute the script and
