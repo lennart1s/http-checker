@@ -62,7 +62,6 @@ func main() {
 	fmt.Println(text)
 
 	if exitWithOne {
-		//os.Exit(1)
-		panic("Error")
+		os.Exit(1)
 	}
 }

@@ -7,3 +7,5 @@ RESP=$(/app/http-checker "$INPUT_URLS" "$INPUT_CODES")
 echo "${RESP}"
 
 echo "::set-output name=responses::${RESP}"
+
+echo "Exited with $?"
