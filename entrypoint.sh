@@ -1,5 +1,9 @@
-echo "Hello World!"
+#!/bin/sh -l
+
+echo "Hello $1"
 
 echo $INPUT_X
 
-echo "::set-output name=y::5"
+time=$(date)
+
+echo "::set-output name=y::'$time"
